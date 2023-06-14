@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .masklp {
+        position: relative;
+      }
+      i.mask {
+        font-style: normal;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.496);
+      }
+      em.txt{
+        font-style: normal;
+        color: whitesmoke;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        font-size: 18px;
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container" style="margin-top: 0">
+      <div class="grid-item"><img src="./images/grid-01.jpg" alt="" /></div>
+      <div class="grid-item"><img src="./images/grid-02.jpg" alt="" /></div>
+      <div class="grid-item"><img src="./images/grid-03.jpg" alt="" /></div>
+      <div class="grid-item"><img src="./images/grid-04.jpg" alt="" /></div>
+      <div class="grid-item"><img src="./images/grid-05.jpg" alt="" /></div>
+      <div class="grid-item"><img src="./images/grid-06.jpg" alt="" /></div>
+      <div class="grid-item masklp" ">
+        <img
+          width="100%"
+          height="100%"
+          src="./微信图片_20230613183058.jpg"
+          alt=""
+          style="transform: scale(1);"
+        />
+        <i class="mask"></i>
+        <em class="txt">我是李鹏小可爱</em>
+      </div>
+    </div>
+    <div class="grid-container">
+      <div class="grid-item"><img src="./images/grid-01.jpg" alt="" /></div>
+      <div class="grid-item"><img src="./images/grid-02.jpg" alt="" /></div>
+      <div class="grid-item"><img src="./images/grid-03.jpg" alt="" /></div>
+      <div class="grid-item"><img src="./images/grid-04.jpg" alt="" /></div>
+      <div class="grid-item"><img src="./images/grid-05.jpg" alt="" /></div>
+      <div class="grid-item"><img src="./images/grid-06.jpg" alt="" /></div>
+      <div class="grid-item masklp" ">
+        <img
+          width="100%"
+          height="100%"
+          src="./微信图片_20230613183058.jpg"
+          alt=""
+          style="transform: scale(1);"
+        />
+        <i class="mask"></i>
+        <em class="txt">我是李鹏小可爱</em>
+      </div>
+    </div>
+  </body>
+</html>
+<style>
+  body {
+    margin: 0;
+  }
+  .grid-container {
+    display: grid;
+    height: 600px;
+    margin: 30px 0;
+    justify-content: center;
+    /* grid-template: 207px 155px 259px / 420px 365px 299px 118px 299px; */
+    grid-template:
+      "a b d d q" 207px
+      "a b e f f" 155px
+      "a c e f f" 259px/ 420px 365px 299px 118px 296px;
+    gap: 3px;
+  }
+  .grid-item:nth-child(1) {
+    grid-area: a;
+  }
+  .grid-item:nth-child(2) {
+    grid-area: b;
+  }
+  .grid-item:nth-child(3) {
+    grid-area: c;
+  }
+  .grid-item:nth-child(4) {
+    grid-area: d;
+  }
+  .grid-item:nth-child(5) {
+    grid-area: e;
+  }
+  .grid-item:nth-child(6) {
+    grid-area: f;
+  }
+  .grid-item:nth-child(7) {
+    grid-area: q;
+    background-color: pink;
+  }
+  .grid-item {
+    overflow: hidden;
+  }
+  img {
+    transition: transform 1s;
+    cursor: pointer;
+  }
+  .grid-item:hover > img {
+    transform: scale(1.5);
+  }
+</style>
